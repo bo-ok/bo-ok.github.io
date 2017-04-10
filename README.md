@@ -1,2 +1,2 @@
-# nix-game.github.io
-Game Website Nix
+# nih-game.github.io
+Game By FrostFire and Inb4
