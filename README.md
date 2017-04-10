@@ -1,2 +1,2 @@
-# oct8redirect.github.io
-Redirect to Oct8
+# nix-game.github.io
+Game Website Nix
