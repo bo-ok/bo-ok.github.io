@@ -11,7 +11,7 @@
     <meta property="og:image" content="/NihBG" />
     <meta property="og:url" content="nih-game.github.io" />
 </head>
-<body>
+
 <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 	<link rel="stylesheet" type="text/css" href="/main.css">
 	<link href="https://www.aseprite.org/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -49,14 +49,193 @@ div { font-family: 'nokiafc22', sans-serif; }
 <font face="/nokiafc22.ttf">
 <div id="content-wrapper">
 <div id="content">
-  <html lang="en">
-	  <body class="game-play">
-	     <iframe class="gameframe" src="http://agar.io/" width="100%" height="100%">
-	<p>Your device is not compatible with iFrame</p>
-</iframe>
+
+	
+	
+	
+ <script async src="/js/142.js"></script>
+  
+  <body ontouchstart="">
+    <div id="touchControls" style="display: none;"></div>
+    <div id="patreonOverlay" style="display: none;">
+      <div id="patreonBox" class="fancyBox greenBox">
+        <h2 style="margin-top: 0;">Thank you for pledging!</h2>
+        <p>Just one step left, log in with patreon to claim your reward</p>
+        <a class="fancyBox fancyBtn" href="javascript:loginWithPatreon()">Log in with Patreon</a>
+      </div>
+    </div>
+    <div id="beginScreen">
+      <div id="social" style="opacity: 0; display: none;">
+        <a href="https://www.patreon.com/bePatron?u=3797304&redirect_uri=http%3A%2F%2Fsplix.io%2F%23pledged" id="patreonA"></a>
+        <a class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" href="https://twitter.com/SplixIo"></a>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20game%20I%20have%20just%20found&amp;url=http://splix.io&amp;hashtags=splixio&amp;related=splixio%3AOfficial%20Twitter%20account,jespertheend%3ADeveloper,"></a>
+        <br>
+        <div id="fb-root"></div>
+        <div class="fb-like" data-href="https://www.facebook.com/splix.io/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+        <br>
+        <div id="socialEmpty"></div>
+        <div class="g-ytsubscribe" data-channelid="UCgMrUe4HjXAfVa-c0OxOELA" data-layout="default" data-count="hidden" data-onytevent="onYtEvent"></div>
+        <br>
+        <a href="https://discord.gg/Zr3r5fJ" target="_blank" id="discordA"></a>
+        <a href="https://www.reddit.com/r/splix" target="_blank" id="redditA"></a>
+        <br>
+        <a class="socialLink" href="http://iogames.space/" target="_blank">More io games</a><br>
+      </div>
+      <canvas id="logoCanvas"></canvas><br>
+      <div id="notification" style="display: none;"></div>
+      <div id="lastStats" style="display: none;">
+        <div id="lastStatsLeft" class="lastStatsBlock" style="text-align: right;">Last game:</div>  <div id="lastStatsRight" class="lastStatsBlock" style="text-align: left;"></div>
+      </div>
+      <div id="bestStats" style="display: none;">
+        <div id="bestStatsLeft" class="lastStatsBlock" style="text-align: right;">Best game:</div>  <div id="bestStatsRight" class="lastStatsBlock" style="text-align: left;"></div>
+      </div>
+      <div id="preroll" style="display: none;">
+      </div>
+      <form id="nameForm" class="fancyBox greenBox" method="get">
+        <div id="adbox" class="sidebox fancyBox greenBox" style="visibility: hidden;">
+          <!-- <center><div class="fb-ad" data-placementid="1812921762327343_1812922822327237" data-format="300x250" data-testmode="false"></div></center> -->
+          <!-- <div id='gpt-banner-1'></div> -->
+        </div>
+        <div id="newsbox" class="sidebox sideboxRight fancyBox greenBox">
+          <div id="newsboxContent" class="sideboxContent">
+            <h3>Teams game mode support for mobile</h3>
+            <p>The latest version of the mobile app (1.4) has support for the teams gamemode. If you open a team url in your browser, it will automatically ask you to open the app. This way desktop players are able to play cross platform with mobile players.</p>
+            <h3>Latest changes</h3>
+            <ul>
+              <li>You can now toggle leaderboard visibility using the 'o' key.</li>
+              <li>When opening a team url on a mobile browser, the page will ask to redirect to the app since the app now has team mode support.</li>
+              <li>Added an ugly mode toggle to the home screen.</li>
+              <li>If you're the creator of the game you'll get fancy goggles</li>
+              <li>Holding an arrow key while pressing another arrow key now remembers your direction</li>
+              <li>Removed the letters L and i from team urls because they look too much like each other</li>
+              <li>Fixed not being able to connect to a team server when starting a game too quickly after creating a team.</li>
+              <li>Opening a #team url or a url with an #animal in it now asks if you want to open the app on mobile devices. wext mobile update will have support for teams :)</li>
+              <li>Fixed dying after having just killed another player.</li>
+              <li>Fixed two players being able to kill the same player at once.</li>
+              <li>Changed the map size back to 600x600 to lower the chance of spawning in someones land. Player count is now between 60 and 90 players per lobby. There are also only two lobbies per server now, which should also decrease the amount of lag.</li>
+              <li>Changed the port of the team server, if you weren't able to connect to the team server first you might be now.</li>
+              <li>Added Patreon support</li>
+              <li>Added patreon pattern and gold color.</li>
+              <li>Added luh pattern.</li>
+              <li>Changed the limit of amount of players per server to about 70, the map is now 500x500 in size.</li>
+              <li>Fixed kills being counted twice.</li>
+              <li>Made the spawn algorithm a bit less accurate when a lot of players are spawning at once, this was causing a lot of lag.</li>
+              <li>Added new teams gamemode.</li>
+              <li>Added local high scores.</li>
+              <li>Fixed players not having the same color as their land.</li>
+              <li>+500 is now only shown when you are the one who killed a player.</li>
+              <li>Made the changelog scrollable.</li>
+              <li>Fixed key strokes not getting registered.</li>
+              <li>Fixed the disconnected message from being spammed.</li>
+              <li>Quality is now set to high by default.</li>
+              <li>Fixed players spawning all at the same position.</li>
+              <li>Fixed blocks being captured at the edge of your area because of lag.</li>
+              <li>Fixed border blocks turning into player blocks.</li>
+              <li>Added an ugly mode which can be enabled on <a href="http://splix.io/flags" target="_blank">splix.io/flags</a>.</li>
+              <li>Added a box with the latest changes and news.</li>
+              <li>Use the P key to freeze your player, in case you need a toilet break. But watch out! Anyone can kill you when paused, even on your own land.</li>
+            </ul>
+          </div>
+        </div>
+        <div id="mopebox" class="sidebox sideboxRight fancyBox greenBox" style="display: none;">
+          <a href="http://mope.io" target="_blank">
+            <div id="mopeboxContent" class="sideboxContent"></div>
+          </a>
+        </div>
+        <input type="text" class="fancyBox inputFancy" maxlength="20" id="nameInput" placeholder="Enter your name"/><br>
+        <select id="gamemodeSelect" class="fancyBox inputFancy">
+          <option>Normal</option>
+          <option>Teams</option>
+        </select>
+        <input type="submit" class="fancyBox fancyBtn" id="joinButton" value="Join" />
+        <div id="teamBox" style="display: none;">
+          <div id="teamBoxLoading" class="whiteText">Loading...</div>
+          <div id="teamBoxLoaded" style="display: none;">
+            <div id="teamShareLinkContainer">
+              <div id="teamShareLinkBox">
+                <div id="teamShareLinkDesc" class="whiteText">Share this url with your<br>friends to create a team.</div>
+                <div id="teamShareLink" class="fancyBox inputFancy">loading...</div>
+                <input type="button" id="teamShareCopyBtn" class="fancyBox fancyBtn" value="copy" />
+              </div>
+            </div>
+            <div id="teamPlayersContainer">
+              <input type="text" class="fancyBox inputFancy" maxlength="20" id="teamNameInput" placeholder="Enter a team name" />
+              <h2 id="teamNameH" class="whiteText"></h2>
+              <h3 class="whiteText" style="margin-bottom: 5px;">Connected players</h3>
+              <ul id="teamPlayersList"></ul>
+            </div>
+          </div>
+        </div>
+      </form>
+      <br><br>
+      <div id="tutorialText" style="opacity: 0;"></div>
+      <canvas id="tutorialCanvas" width="300" height="300"></canvas>
+      <div id="expandPage"></div>
+      <canvas id="skinButton" title="block customization" style="display: none;" width="30" height="30"></canvas>
+      <div id="skinButtonShadow"></div>
+      <div id="shareToUnlock" style="display: none;">
+        <div id="shareTw" class="shareButton"></div>
+        <div id="shareFb" class="shareButton"></div>
+        <div id="shareText">Share to unlock<br>block customization!</div>
+      </div>
+      <div id="cornerLinks">
+        <a href="/about">about</a>
+        <a href="/leaderboards">leaderboards</a>
+        <a href="/privacy" title="wubalubadubdub">privacy</a><br>
+        <a id="qualityText">Quality: high</a><br>
+        <a id="uglyText">Ugly mode: off</a>
+      </div>
+      <div id="appLinks"></div>
+    </div>
+    <div id="skinScreen" style="display: none;">
+      <div class="skinButtonContainer">
+        <div id="prevColor" class="skinButton skinButtonLeft"></div>
+        <div class="skinValue">Color</div>
+        <div id="nextColor" class="skinButton skinButtonRight"></div>
+      </div>
+      <div class="skinButtonContainer">
+        <div id="prevPattern" class="skinButton skinButtonLeft"></div>
+        <div class="skinValue">Pattern</div>
+        <div id="nextPattern" class="skinButton skinButtonRight"></div>
+      </div>
+      <div class="skinButtonContainer">
+        <div class="skinValue" id="skinSave">Save</div>
+      </div>
+      <canvas id="skinScreenCanvas" class="fullscreenCanvas"></canvas>
+    </div>
+    <div id="playUI" style="display: none;">
+      <div id="scoreBlock" class="greenBox">
+        <span>
+          <span>Kills: </span>
+          <span id="myKills" class="rank"></span>
+        </span>
+        <br>
+        <span>Blocks captured: <span id="blockCaptureCount" class="rank"></span></span>
+        <br>
+        <span title="blocks + kills x 500">Score: <span id="score"></span></span>
+        <br>
+        <span>Your rank: <span id="myRank" class="rank"></span> of <span id="totalPlayers" class="rank"></span></span>
+      </div>
+      <div id="leaderboard" class="greenBox">
+      </div>
+      <div id="miniMap" class="greenBox">
+        <div id="miniMapPlayer"></div>
+        <canvas id="minimapCanvas" width="160" height="160" ></canvas>
+      </div>
+      <div id="lifeBox"></div>
+      <div id="topNotifications"></div>
+    </div>
+    <canvas id="transitionCanvas" class="fullscreenCanvas" style="z-index: 1000; display: none;"></canvas>
+    <canvas id="mainCanvas" class="fullscreenCanvas" style="z-index: -100; display: none;"></canvas>
+    <script>
+      //detect canvas support
+      (function(e){if(!(e.getContext && e.getContext("2d"))){alert("Your browser doesn't support this game, please download a modern browser that supports html5 games. We recommend you to download Google Chrome.");}})(document.createElement("canvas"));
+    </script>
+    <div id='cdm-zone-end'></div>
+  </body>
     
                                                          
-	  </div></div></font></body>
+	  </div></font>
 
        
       
