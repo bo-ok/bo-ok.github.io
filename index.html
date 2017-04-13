@@ -15,24 +15,20 @@
 
 <style>
 @font-face {
-    font-family:"editundo";
-    src: url("editundo.ttf") 
-}
-@font-face {
-    font-family:"editundo";
-    src: url("editundo.ttf") 
+	font-family: 'editundo';
+	src: url('/editundo.ttf'); 
+	src: 
+		local('editundo'),
+		local('editundo'),
+		url('/editundo.ttf') 
+		format('opentype');
+
 }
 
-h3 {
-    font-family:'editundo', sans-serif;
-    font-size: 26px;
-    font-weight:normal;
-    text-align: left;
-    line-height: 100%;
-    border-bottom: 1px solid #484848;
-    padding-bottom: 5px;
-    margin-bottom:7px;
-}
+div { font-family: 'editundo', sans-serif; }
+
+span { font-weight: bold; }
+
 		</style>
 		<embed src="/smb3coin.mp3"
        autostart="true"
