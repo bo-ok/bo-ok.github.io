@@ -1,2 +1,1 @@
-# krate-game.github.io
-Game
+# boxkrate.github.io
