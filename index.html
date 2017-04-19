@@ -41,11 +41,96 @@
 			<div class="panel panel-default">
 				<div class=panel-body>
 					<div class=form-group>
-						<input onkeyup="convert()" class=form-control id=textInput placeholder="">
+						<input onkeyup="convert()" class=form-control id=english-text placeholder="">
 					</div>
 					<div class=form-group>
-						<textarea class=form-control id=textOutput onclick=this.focus(),this.select() placeholder="" readonly rows=10 style=max-width:100%></textarea>
-<center>				
+						<textarea class=form-control id=ghetto-text onclick=this.focus(),this.select() placeholder="" readonly rows=10 style=max-width:100%></textarea>
+<center>				<script>
+
+            //try {
+                var reverseIsDisabled = false;
+                //<![CDATA[
+                var luni = new Lunicode();
+
+function forward(text) {
+  return luni.tools.creepify.encode(text);
+}
+function backward(text) {
+  return luni.tools.creepify.decode(text);
+}
+
+luni.tools.creepify.options.maxHeight = 15;
+
+var maxZalgoHeight = 15;
+$(".transdiv.ghetto").append("<div style='position: absolute; bottom: 10px; text-align: center; width: 100%;'>Craziness Level: <input style='position: relative; top: 0.3rem;' id='voice_speed' type='range' min='0' max='300' value='15' step='1'></div>")
+$("#voice_speed").on("input", function(){ luni.tools.creepify.options.maxHeight = this.value; var english = $('#english-text').val(); var ghetto = translate(english); $('#ghetto-text').val(ghetto); });
+
+function Lunicode(){this.tools={flip:{init:function(){for(i in this.map)this.map[this.map[i]]=i},encode:function(i){for(var r,t=[],o=0,h=i.length;h>o;o++)r=i.charAt(o),o>0&&("̤"==r||"̗"==r||"̖"==r||"̮"==r)?(r=this.map[i.charAt(o-1)+r],t.pop()):(r=this.map[r],"undefined"==typeof r&&(r=i.charAt(o))),t.push(r);return t.reverse().join("")},decode:function(i){for(var r,t=[],o=0,h=i.length;h>o;o++)r=i.charAt(o),o>0&&("̤"==r||"̗"==r||"̖"==r||"̮"==r)?(r=this.map[i.charAt(o-1)+r],t.pop()):(r=this.map[r],"undefined"==typeof r&&(r=i.charAt(o))),t.push(r);return t.reverse().join("")},map:{a:"ɐ",b:"q",c:"ɔ",d:"p",e:"ǝ",f:"ɟ",g:"ɓ",h:"ɥ",i:"ı",j:"ɾ",k:"ʞ",l:"l",m:"ɯ",n:"u",r:"ɹ",t:"ʇ",v:"ʌ",w:"ʍ",y:"ʎ",A:"∀",B:"ᙠ",C:"Ɔ",D:"ᗡ",E:"Ǝ",F:"Ⅎ",G:"⅁",J:"ſ",K:"⋊",L:"˥",M:"W",P:"Ԁ",Q:"Ό",R:"ᴚ",T:"⊥",U:"∩",V:"Λ",Y:"⅄",1:"⇂",2:"ᄅ",3:"Ɛ",4:"ㄣ",5:"ގ",6:"9",7:"ㄥ","&":"⅋",".":"˙",'"':"„",";":"؛","[":"]","(":")","{":"}","?":"¿","!":"¡","'":",","<":">","‾":"_","¯":"_","‿":"⁀","⁅":"⁆","∴":"∵","\r":"\n","ß":"ᙠ","̈":"̤","ä":"ɐ̤","ö":"o̤","ü":"n̤","Ä":"∀̤","Ö":"O̤","Ü":"∩̤","´":" ̗","é":"ǝ̗","á":"ɐ̗","ó":"o̗","ú":"n̗","É":"Ǝ̗","Á":"∀̗","Ó":"O̗","Ú":"∩̗","`":" ̖","è":"ǝ̖","à":"ɐ̖","ò":"o̖","ù":"n̖","È":"Ǝ̖","À":"∀̖","Ò":"O̖","Ù":"∩̖","^":" ̮","ê":"ǝ̮","â":"ɐ̮","ô":"o̮","û":"n̮","Ê":"Ǝ̮","Â":"∀̮","Ô":"O̮","Û":"∩̮"}},mirror:{init:function(){for(i in this.map)this.map[this.map[i]]=i},encode:function(i){for(var r,t=[],o=[],h=0,n=i.length;n>h;h++)r=i.charAt(h),h>0&&("̈"==r||"̀"==r||"́"==r||"̂"==r)?(r=this.map[i.charAt(h-1)+r],t.pop()):(r=this.map[r],"undefined"==typeof r&&(r=i.charAt(h))),"\n"==r?(o.push(t.reverse().join("")),t=[]):t.push(r);return o.push(t.reverse().join("")),o.join("\n")},decode:function(i){for(var r,t=[],o=[],h=0,n=i.length;n>h;h++)r=i.charAt(h),h>0&&("̈"==r||"̀"==r||"́"==r||"̂"==r)?(r=this.map[i.charAt(h-1)+r],t.pop()):(r=this.map[r],"undefined"==typeof r&&(r=i.charAt(h))),"\n"==r?(o.push(t.reverse().join("")),t=[]):t.push(r);return o.push(t.reverse().join("")),o.join("\n")},map:{a:"ɒ",b:"d",c:"ɔ",e:"ɘ",f:"Ꮈ",g:"ǫ",h:"ʜ",j:"ꞁ",k:"ʞ",l:"|",n:"ᴎ",p:"q",r:"ɿ",s:"ꙅ",t:"ƚ",y:"ʏ",z:"ƹ",B:"ᙠ",C:"Ɔ",D:"ᗡ",E:"Ǝ",F:"ꟻ",G:"Ꭾ",J:"Ⴑ",K:"⋊",L:"⅃",N:"Ͷ",P:"ꟼ",Q:"Ọ",R:"Я",S:"Ꙅ",Z:"Ƹ",1:"",2:"",3:"",4:"",5:"",6:"",7:"","&":"",";":"","[":"]","(":")","{":"}","?":"⸮","<":">","ä":"ɒ̈","ß":"ᙠ","´":"`","é":"ɘ̀","á":"ɒ̀","ó":"ò","ú":"ù","É":"Ǝ̀","Á":"À","Ó":"Ò","Ú":"Ù","`":"´","è":"ɘ́","à":"ɒ́","È":"Ǝ́","ê":"ɘ̂","â":"ɒ̂","Ê":"Ǝ̂","Ø":"ᴓ","ø":"ᴓ"}},creepify:{init:function(){for(var i=768;789>=i;i++)this.diacriticsTop.push(String.fromCharCode(i));for(var i=790;819>=i;i++)794!=i&&795!=i&&this.diacriticsBottom.push(String.fromCharCode(i));this.diacriticsTop.push(String.fromCharCode(794)),this.diacriticsTop.push(String.fromCharCode(795));for(var i=820;824>=i;i++)this.diacriticsMiddle.push(String.fromCharCode(i));for(var i=825;828>=i;i++)this.diacriticsBottom.push(String.fromCharCode(i));for(var i=829;836>=i;i++)this.diacriticsTop.push(String.fromCharCode(i));this.diacriticsTop.push(String.fromCharCode(836)),this.diacriticsBottom.push(String.fromCharCode(837)),this.diacriticsTop.push(String.fromCharCode(838)),this.diacriticsBottom.push(String.fromCharCode(839)),this.diacriticsBottom.push(String.fromCharCode(840)),this.diacriticsBottom.push(String.fromCharCode(841)),this.diacriticsTop.push(String.fromCharCode(842)),this.diacriticsTop.push(String.fromCharCode(843)),this.diacriticsTop.push(String.fromCharCode(844)),this.diacriticsBottom.push(String.fromCharCode(845)),this.diacriticsBottom.push(String.fromCharCode(846)),this.diacriticsTop.push(String.fromCharCode(848)),this.diacriticsTop.push(String.fromCharCode(849)),this.diacriticsTop.push(String.fromCharCode(850)),this.diacriticsBottom.push(String.fromCharCode(851)),this.diacriticsBottom.push(String.fromCharCode(852)),this.diacriticsBottom.push(String.fromCharCode(853)),this.diacriticsBottom.push(String.fromCharCode(854)),this.diacriticsTop.push(String.fromCharCode(855)),this.diacriticsTop.push(String.fromCharCode(856)),this.diacriticsBottom.push(String.fromCharCode(857)),this.diacriticsBottom.push(String.fromCharCode(858)),this.diacriticsTop.push(String.fromCharCode(859)),this.diacriticsBottom.push(String.fromCharCode(860)),this.diacriticsTop.push(String.fromCharCode(861)),this.diacriticsTop.push(String.fromCharCode(861)),this.diacriticsBottom.push(String.fromCharCode(863)),this.diacriticsTop.push(String.fromCharCode(864)),this.diacriticsTop.push(String.fromCharCode(865))},encode:function(r){var t,o="";for(i in r){if(t=r[i],this.options.middle&&(t+=this.diacriticsMiddle[Math.floor(Math.random()*this.diacriticsMiddle.length)]),this.options.top)for(var h=this.diacriticsTop.length-1,n=0,a=this.options.maxHeight-Math.random()*(this.options.randomization/100*this.options.maxHeight);a>n;n++)t+=this.diacriticsTop[Math.floor(Math.random()*h)];if(this.options.bottom)for(var s=this.diacriticsBottom.length-1,n=0,a=this.options.maxHeight-Math.random()*(this.options.randomization/100*this.options.maxHeight);a>n;n++)t+=this.diacriticsBottom[Math.floor(Math.random()*s)];o+=t}return o},decode:function(r){var t,o="";for(i in r)t=r[i].charCodeAt(0),(768>t||t>865)&&(o+=r[i]);return o},diacriticsTop:[],diacriticsMiddle:[],diacriticsBottom:[],options:{top:!0,middle:!0,bottom:!0,maxHeight:15,randomization:100}},bubbles:{init:function(){for(var i=49;57>=i;i++)this.map[String.fromCharCode(i)]=String.fromCharCode(i+9263);this.map[0]="⓪";for(var i=65;90>=i;i++)this.map[String.fromCharCode(i)]=String.fromCharCode(i+9333);for(var i=97;122>=i;i++)this.map[String.fromCharCode(i)]=String.fromCharCode(i+9327);for(i in this.map)this.mapInverse[this.map[i]]=i},encode:function(r){var t,o="",h=!0;for(i in r)t=this.map[r[i]],"undefined"==typeof t&&(r[i].charCodeAt(0)>=33?(t=r[i]+String.fromCharCode(8413),h||(t=String.fromCharCode(8239)+String.fromCharCode(160)+String.fromCharCode(160)+String.fromCharCode(8239)+t)):t=r[i]),o+=t,h="\n"==t;return o},decode:function(r){var t,o="",h="";for(i in r)t=this.mapInverse[r[i]],o+="undefined"==typeof t?r[i]:t;for(i in o)t=o[i].charCodeAt(0),160!=t&&8239!=t&&8413!=t&&(h+=o[i]);return h},map:{},mapInverse:{}},squares:{init:function(){},encode:function(r){var t,o="",h=!0;for(i in r)r[i].charCodeAt(0)>=33?(t=r[i]+String.fromCharCode(8414),h||(t=String.fromCharCode(8239)+String.fromCharCode(160)+String.fromCharCode(160)+String.fromCharCode(8239)+t)):t=r[i],o+=t,h="\n"==t;return o},decode:function(r){var t,o="";for(i in r)t=r[i].charCodeAt(0),160!=t&&8239!=t&&8414!=t&&(o+=r[i]);return o}},roundsquares:{init:function(){},encode:function(r){var t,o="",h=!0;for(i in r)r[i].charCodeAt(0)>=33?(t=r[i]+String.fromCharCode(8419),h||(t=String.fromCharCode(160)+String.fromCharCode(160)+String.fromCharCode(160)+t)):t=r[i],o+=t,h="\n"==t;return o},decode:function(r){var t,o="";for(i in r)t=r[i].charCodeAt(0),160!=t&&8239!=t&&8419!=t&&(o+=r[i]);return o}},bent:{init:function(){for(i in this.map)this.map[this.map[i]]=i},encode:function(i){for(var r,t="",o=0,h=i.length;h>o;o++)r=this.map[i.charAt(o)],"undefined"==typeof r&&(r=i.charAt(o)),t+=r;return t},decode:function(i){for(var r,t="",o=0,h=i.length;h>o;o++)r=this.map[i.charAt(o)],"undefined"==typeof r&&(r=i.charAt(o)),t+=r;return t},map:{a:"ą",b:"ҍ",c:"ç",d:"ժ",e:"ҽ",f:"ƒ",g:"ց",h:"հ",i:"ì",j:"ʝ",k:"ҟ",l:"Ӏ",m:"ʍ",n:"ղ",o:"օ",p:"ք",q:"զ",r:"ɾ",s:"ʂ",t:"է",u:"մ",v:"ѵ",w:"ա",x:"×",y:"վ",z:"Հ",A:"Ⱥ",B:"β",C:"↻",D:"Ꭰ",E:"Ɛ",F:"Ƒ",G:"Ɠ",H:"Ƕ",I:"į",J:"ل",K:"Ҡ",L:"Ꝉ",M:"Ɱ",N:"ហ",O:"ට",P:"φ",Q:"Ҩ",R:"འ",S:"Ϛ",T:"Ͳ",U:"Ա",V:"Ỽ",W:"చ",X:"ჯ",Y:"Ӌ",Z:"ɀ",0:"⊘",1:"������",2:"ϩ",3:"Ӡ",4:"५",5:"Ƽ",6:"Ϭ",7:"7",8:"������",9:"९","&":"⅋","(":"{",")":"}","{":"(","}":")","ä":"ą̈","ö":"օ̈","ü":"մ̈","Ä":"Ⱥ̈","Ö":"ට̈","Ü":"Ա̈","é":"ҽ́","á":"ą́","ó":"օ́","ú":"մ́","É":"Ɛ́","Á":"Ⱥ́","Ó":"ට́","Ú":"Ա́","è":"ҽ̀","à":"ą̀","ò":"օ̀","ù":"մ̀","È":"Ɛ̀","À":"Ⱥ̀","Ò":"ට̀","Ù":"Ա̀","ê":"ҽ̂","â":"ą̂","ô":"օ̂","û":"մ̂","Ê":"Ɛ̂","Â":"Ⱥ̂","Ô":"ට̂","Û":"Ա̂"}},tiny:{init:function(){for(i in this.map)this.map[this.map[i]]=i},encode:function(i){var r,t="";i=i.toUpperCase();for(var o=0,h=i.length;h>o;o++)r=this.map[i.charAt(o)],"undefined"==typeof r&&(r=i.charAt(o)),t+=r;return t},decode:function(i){for(var r,t="",o=0,h=i.length;h>o;o++)r=this.map[i.charAt(o)],"undefined"==typeof r&&(r=i.charAt(o)),t+=r;return t},map:{A:"ᴀ",B:"ʙ",C:"ᴄ",D:"ᴅ",E:"ᴇ",F:"ꜰ",G:"ɢ",H:"ʜ",I:"ɪ",J:"ᴊ",K:"ᴋ",L:"ʟ",M:"ᴍ",N:"ɴ",O:"ᴏ",P:"ᴘ",Q:"Q",R:"ʀ",S:"ꜱ",T:"ᴛ",U:"ᴜ",V:"ᴠ",W:"ᴡ",X:"x",Y:"ʏ",Z:"ᴢ"}}};for(i in this.tools)this.tools[i].init();this.getHTML=function(i){for(var r,t="",o=!0,h=0,n=0,a=0,s=i.length;s>a;a++)r=i.charCodeAt(a),10==r||13==r?(t+="<br>\n",o=!0):32==r?o?(t+=" ",o=!1):(t+=" ",o=!0):(r>=55296&&56319>=r?(h=r,n=0):h>0?(r>=56320&&57343>=r&&(n=1024*(h-55296)+(r-56320)+65536),h=0):n=r,0!=n&&(t+="&#x"+n.toString(16)+";",o=!0));return t}}
+
+
+			try {
+			
+
+			var jsonData = {"phrases1":"","phrases2":"","words1":"","words2":"","intraword1":"","intraword2":"","prefixes1":"","prefixes2":"","suffixes1":"","suffixes2":"","regex1":"","regex2":"","rev_regex1":"","rev_regex2":"","ordering1":"","ordering2":""};
+			phrases1 = jsonData.phrases1.split("\n");
+			phrases2 = jsonData.phrases2.split("\n");
+			words1 = jsonData.words1.split("\n");
+			words2 = jsonData.words2.split("\n");
+			intraword1 = jsonData.intraword1.split("\n");
+			intraword2 = jsonData.intraword2.split("\n");
+			prefixes1 = jsonData.prefixes1.split("\n");
+			prefixes2 = jsonData.prefixes2.split("\n");
+			suffixes1 = jsonData.suffixes1.split("\n");
+			suffixes2 = jsonData.suffixes2.split("\n");
+			regex1 = jsonData.regex1.split("\n");
+			regex2 = jsonData.regex2.split("\n");
+			rev_regex1 = jsonData.rev_regex1.split("\n");
+			rev_regex2 = jsonData.rev_regex2.split("\n");
+            ordering1 = jsonData.ordering1.split("\n");
+            ordering2 = jsonData.ordering2.split("\n");
+
+			} catch(err) {
+				alert("Ahh an error!"+err.message);
+			}
+
+			evenUpSizes(phrases1,phrases2);
+			evenUpSizes(words1,words2);
+			evenUpSizes(intraword1,intraword2);
+			evenUpSizes(prefixes1,prefixes2);
+			evenUpSizes(suffixes1,suffixes2);
+
+			//fix for mysql trailing newline deletion problem
+			function evenUpSizes(a,b) {
+				if(a.length > b.length) {
+					while(a.length > b.length) b.push("");
+				} else if(b.length > a.length) {
+					while(b.length > a.length) a.push("");
+				}
+			}
+
+			handleDuplicates(words1, words2);
+			/* Initial translate for default text */
+			if($('#english-text').val() != "") {
+				var english = $('#english-text').val();
+				var ghetto = translate(english);
+				$('#ghetto-text').val(ghetto);
+			}
+		
+
+   
+      if($("div.intro").height() > 400) {
+        $("div.intro").css("height","400px");
+        $(".readmore-box").show();
+      }
+
+      $("#intro-read-more-button").click(function() {
+        $(".readmore-box").hide();
+        $("div.intro").css("height","auto");
+      })
+    </script>
+
+
+		
 				</div>
 			</div>
 		</div>
