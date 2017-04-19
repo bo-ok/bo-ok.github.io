@@ -43,8 +43,20 @@
 					<div class=form-group><body>
 						<p style="nokiafc22">
 
-							TEXT
-                                                                                                           
+							<textarea>
+                                                       <script>
+							       var crypto = require("crypto");
+exports.shortURL = new function () {
+    this.getShortURL = function () {
+        var sURL = '',
+            _rand = crypto.randomBytes(25).toString('hex'),
+            _base = _rand.length;
+        for (var i = 0; i < 7; i++)
+            sURL += _rand.charAt(Math.floor(Math.random() * _rand.length));
+        return sURL;
+    };
+}
+								</script></textarea>
 					</body>
 </html>
 			
