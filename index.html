@@ -41,15 +41,11 @@
 			<div class="panel panel-default">
 				<div class=panel-body>
 					<div class=form-group>
-						<input onkeyup="convert()" class=form-control id=flipString placeholder="">
+						<input onkeyup="convert()" class=form-control id=c placeholder="">
 					</div>
 					<div class=form-group>
-						<textarea class=form-control id=result onclick=this.focus(),this.select() placeholder="" readonly rows=10 style=max-width:100%></textarea>
-<center>		<script>body.transform {
-  transform:rotate(180deg);
-  -ms-transform:rotate(180deg);
-  -webkit-transform:rotate(180deg);
-}
+						<textarea class=form-control id=i onclick=this.focus(),this.select() placeholder="" readonly rows=10 style=max-width:100%></textarea>
+<center>		<script>
 	function flip() {
  var result = flipString(document.f.original.value.toLowerCase());
  document.f.flipped.value = result;
