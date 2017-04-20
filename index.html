@@ -46,18 +46,45 @@
 			<div class="g-recaptcha" data-sitekey="6Lcl2h0UAAAAAK-dFSlbhjflC2GtYhD-xs2iK7Yh"></div>
 					<script type ="text/php">
 					<?php
-$img_number = imagecreate(275,25);
-$backcolor = imagecolorallocate($img_number,102,102,153);
-$textcolor = imagecolorallocate($img_number,255,255,255);
 
-imagefill($img_number,0,0,$backcolor);
-$number = " Your IP is $_SERVER[REMOTE_ADDR]";
+echo "Your IP is";
 
-Imagestring($img_number,10,5,5,$number,$textcolor);
+echo $_SERVER["REMOTE_ADDR"];
 
-header("Content-type: image/jpeg");
-imagejpeg($img_number);
-?>
+function get_ip_address() {
+  // check for shared internet/ISP IP
+  if (!empty($_SERVER['HTTP_CLIENT_IP']) && $this->validate_ip($_SERVER['HTTP_CLIENT_IP']))
+   return $_SERVER['HTTP_CLIENT_IP'];
+
+  // check for IPs passing through proxies
+  if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+   // check if multiple ips exist in var
+    $iplist = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+    foreach ($iplist as $ip) {
+     if ($this->validate_ip($ip))
+      return $ip;
+    }
+   }
+
+  if (!empty($_SERVER['HTTP_X_FORWARDED']) && $this->validate_ip($_SERVER['HTTP_X_FORWARDED']))
+   return $_SERVER['HTTP_X_FORWARDED'];
+  if (!empty($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']) && $this->validate_ip($_SERVER['HTTP_X_CLUSTER_CLIENT_IP']))
+   return $_SERVER['HTTP_X_CLUSTER_CLIENT_IP'];
+  if (!empty($_SERVER['HTTP_FORWARDED_FOR']) && $this->validate_ip($_SERVER['HTTP_FORWARDED_FOR']))
+   return $_SERVER['HTTP_FORWARDED_FOR'];
+  if (!empty($_SERVER['HTTP_FORWARDED']) && $this->validate_ip($_SERVER['HTTP_FORWARDED']))
+   return $_SERVER['HTTP_FORWARDED'];
+
+  // return unreliable ip since all else failed
+   return $_SERVER['REMOTE_ADDR'];
+ }
+
+function validate_ip($ip) {
+     if (filter_var($ip, FILTER_VALIDATE_IP, 
+                         FILTER_FLAG_IPV4 | 
+                         FILTER_FLAG_IPV6 |
+                         FILTER_FLAG_NO_PRIV_RANGE | 
+                         FILTER_FLAG_NO_RES_RANGE) === false)
 					</script>
 					</body>
 </html>
