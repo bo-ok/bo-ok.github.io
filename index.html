@@ -55,7 +55,7 @@
 				   
     <script type="text/javascript">
 function scrambleWord(s){
-    var word= s.value.split('textInput'), scram= 'textOutput';
+    var word= s.value.split('textOutput'), scram= 'textInput';
     while(word.length){
         scram+= word.splice(Math.floor(Math.random()*word.length), 1)[0];
     }
