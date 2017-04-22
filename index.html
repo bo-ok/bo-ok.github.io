@@ -54,17 +54,15 @@
 					</body>
 				   
     <script type="text/javascript">
- var word = "textInput";
-var wordLength = word.length;
-var scrambled = "textOutput";
-
-for (var i = 0; i < wordLength; i++) {
-    var charIndex = Math.floor(Math.random() * word.length);
-    scrambled += word.charAt(charIndex);
-    word = word.substr(0, charIndex) + word.substr(charIndex + 1);
+function scrambleWord(s){
+    var word= s.value.split('textInput'), scram= 'textOutput';
+    while(word.length){
+        scram+= word.splice(Math.floor(Math.random()*word.length), 1)[0];
+    }
+    return scram;
 }
 </script>
-
+<br><br>
 				<div class="g-recaptcha" data-sitekey="6Lcl2h0UAAAAAK-dFSlbhjflC2GtYhD-xs2iK7Yh"></div>
 </html>
 			
