@@ -46,17 +46,66 @@
 			
 					</body>
 				   
-    
-                  <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl.agar.io/" : "http://www.agar.io/");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-471290-10");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+    <script type="text/javascript">
+function makeShort() 
+{
+   var longUrl=document.getElementById("longurl").value;
+    var request = gapi.client.urlshortener.url.insert({
+    'resource': {
+      'longUrl': longUrl
+	}
+    });
+    request.execute(function(response) 
+	{
+		
+		if(response.id != null)
+		{
+			str ="<b>Long URL:</b>"+longUrl+"<br>";
+			str +="<b>Short URL:</b> <a href='"+response.id+"'>"+response.id+"</a><br>";
+			document.getElementById("output").innerHTML = str;
+		}
+		else
+		{
+			alert("error: creating short url");
+		}
+	
+    });
+ }
+
+function getShortInfo()
+{
+var shortUrl=document.getElementById("shorturl").value;
+
+    var request = gapi.client.urlshortener.url.get({
+      'shortUrl': shortUrl,
+	'projection':'FULL'
+    });
+    request.execute(function(response) 
+	{
+		
+		if(response.longUrl!= null)
+		{
+			str ="<b>Long URL:</b>"+response.longUrl+"<br>";
+			str +="<b>Create On:</b>"+response.created+"<br>";
+			document.getElementById("output").innerHTML = str;
+		}
+		else
+		{
+			alert("error: unable to get URL information");
+		}
+	
+    });
+
+}
+function load()
+{
+	gapi.client.setApiKey('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'); //get your ownn Browser API KEY
+	gapi.client.load('urlshortener', 'v1',function(){});
+
+}
+window.onload = load;
+
+</script>
 
 				<div class="g-recaptcha" data-sitekey="6Lcl2h0UAAAAAK-dFSlbhjflC2GtYhD-xs2iK7Yh"></div>
 </html>
