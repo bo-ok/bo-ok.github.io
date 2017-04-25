@@ -42,7 +42,15 @@
 <center>
 	<br><br><br><br><br><br><br><br><br><br><br><br>
 		<body style="background-color:#262626;">
-		<a href="https://en.wikipedia.org/wiki/Special:Random" class="w3-hover-opacity" target="_blank"><img src="/book.png" alt="Book"></a>
+		<a href="https://en.wikipedia.org/wiki/Special:Random" class="w3-hover-opacity" id="link" target="_blank"><img src="/book.png" alt="Book"></a>
 			<br><br><br><br><br><br><br><br><br><br><br><br>
-		
+			<script>
+		var link = document.getElementById("link");
+
+document.onkeydown = function (e) {
+    if (e.keyCode == 32) {
+        link.click();
+    }
+};
+			</script>
 </html>
