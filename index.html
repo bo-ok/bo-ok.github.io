@@ -46,11 +46,17 @@ ______  ______         ____            ____     ______   _______
 	</style>
 	<!--CSS Font-->
 	<style>
-		@font-face { 
-font-family: Lady Radical;
-src: url(/Lady Radical.ttf); 
+<style type="text/css">
+@font-face {
+    font-family: "Radical";
+    src: url(/Lady Radical.ttf) format("truetype");
 }
-	</style>
+p.customfont { 
+    font-family: "Radocal", Verdana, Tahoma;
+}
+</style>
+<p class="customfont">
+	
 	<!--Hover Image-->
 	<style>
 		.test {
@@ -78,7 +84,8 @@ src: url(/Lady Radical.ttf);
 		<body style="background-color:#262626;">
 		<a href="https://en.wikipedia.org/wiki/Special:Random" class="w3-hover-opacity" class="g-recaptcha" id="link" target="_blank" data-sitekey="6Ld6sx4UAAAAAH1abyMj3XnSBJKIQs89NbGKu-0B" data-callback="YourOnSubmitFn">
 			<img src="/book.png" class="test" alt="Book"></a>
-We Are Available for Partnering!
+We Are Available for Partnering!<br>
+
 			<br><br><br><br><br><br><br><br><br><br><br><br>
 			
 			<!--Enable Space Press-->
@@ -91,5 +98,5 @@ document.onkeydown = function (e) {
     }
 };
 			</script>
-			
+			</p>		
 </html>
