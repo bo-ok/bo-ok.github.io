@@ -14,11 +14,11 @@ Hexsphere
 ```
 Ryaoshi
 ```
-## Primary Developers (CSS Styling)
+## Primary Developers ( CSS Styling )
 ```
 Hexsphere
 ```
-## Secondary Developers (CSS Styling)
+## Secondary Developers ( CSS Styling )
 ```
 Inb4
 ```
