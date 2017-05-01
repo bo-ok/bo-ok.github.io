@@ -2,132 +2,7 @@
 <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
 <title>o-o</title>	
 </head>
-<style>
-@import "compass/css3";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
-.pickshell {
-	position: absolute;
-  margin: -123px -96px;
-  top: 50%;
-  left: 50%;
-  width: 192px;
-}
-.picker {
-	z-index: 12345;
-	overflow: hidden;
-	padding: 6px;
-	border-radius: 8px;
-	background-color: #fff;
-  box-shadow: inset 0px 7px 30px -16px rgba(0, 0, 0, 0.3), 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
-}
-.picker .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 1px 0 0 5px;
-  border-radius: 10px;
-  box-shadow: inset 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
-}
-.picker input {
-  margin: 0 0 0 0.7em;
-	width: 139px;
-  padding: 0;
-  border: none;
-  outline: none;
-  display: inline-block;
-	vertical-align: top;
-  line-height: 1em;
-  font-family: Open Sans, sans-serif;
-  font-weight: 300;
-  font-size: 1em;
-	text-transform: uppercase;
-	background-color: transparent;
-}
-.board {
-	width: 180px;
-	height: 180px;
-	margin: 4px 0 6px;
-	position: relative;
-	background-color: #00ffff;
-	border-radius: 4px!important;
-}
-.board:before, .board:after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	right: 0;
-}
-.board:before {
-	@include background(linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%));
-}
-.board:after {
-	@include background(linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%));
-}
-.board:before, .board:after, .board, .rainbow {
-	border-radius: 3px;
-}
-.choice {
-	width: 6px;
-	height: 6px;
-	margin: -5px;
-	position: absolute;
-	z-index: 1234;
-	top: 0px;
-	left: 0px;
-	background-color: transparent;
-	border-radius: 20px;
-	border: 2px solid #fff;
-  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
-}
-.rainbow {
-	width: 180px;
-	height: 1em;
-	position: relative;
-  z-index: 1;
-	@include background(linear-gradient(to right,  #ff3232 0%, #ff9900 10%, #ffff00 17%, #ccff00 20%, #32ff00 30%, #00ff65 40%, #00ffff 50%, #0065ff 60%, #3300ff 70%, #cb00ff 81%, #ff0098 90%, #ff0004 100%));
-  border: 0;
-}
-.rainbow .ui-slider-handle {
-  display: inline-block;
-  position: absolute;
-  width: 4px;
-	height: 1em;
-  margin: 0 -4px;
-  top: 0;
-	border-color: #fff;
-	border-width: 0 2px;
-	border-style: solid;
-  border-radius: 0;
-  background: transparent;
-}
-.rainbow a:before, .rainbow a:after {
-	content: '';
-	width: 8px;
-	background-color: #fff;
-	height: 3px;
-	box-shadow: 0px 0px 10px 0px #000;
-	position: absolute;
-	display: block;
-	margin: 0 -2px;
-	z-index: -1;
-}
-.rainbow a:before {
-	top: -3px;
-	border-radius: 3px 3px 0 0;
-}
-.rainbow a:after {
-	bottom: -3px;
-	border-radius: 0 0 3px 3px;
-}
-.board, .choice {
-	cursor: crosshair;
-}
-.rainbow, .rainbow a {
-	cursor: ew-resize;
-	}</style>
 <script>
 			$(document).ready(function() {
 jQuery.fn.pickify = function() {
@@ -299,6 +174,132 @@ $('.picker').pickify();
 
 });
 		</script>
+<style>
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+.pickshell {
+	position: absolute;
+  margin: -123px -96px;
+  top: 50%;
+  left: 50%;
+  width: 192px;
+}
+.picker {
+	z-index: 12345;
+	overflow: hidden;
+	padding: 6px;
+	border-radius: 8px;
+	background-color: #fff;
+  box-shadow: inset 0px 7px 30px -16px rgba(0, 0, 0, 0.3), 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
+}
+.picker .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0 5px;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
+}
+.picker input {
+  margin: 0 0 0 0.7em;
+	width: 139px;
+  padding: 0;
+  border: none;
+  outline: none;
+  display: inline-block;
+	vertical-align: top;
+  line-height: 1em;
+  font-family: Open Sans, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+	text-transform: uppercase;
+	background-color: transparent;
+}
+.board {
+	width: 180px;
+	height: 180px;
+	margin: 4px 0 6px;
+	position: relative;
+	background-color: #00ffff;
+	border-radius: 4px!important;
+}
+.board:before, .board:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+.board:before {
+	@include background(linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%));
+}
+.board:after {
+	@include background(linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%));
+}
+.board:before, .board:after, .board, .rainbow {
+	border-radius: 3px;
+}
+.choice {
+	width: 6px;
+	height: 6px;
+	margin: -5px;
+	position: absolute;
+	z-index: 1234;
+	top: 0px;
+	left: 0px;
+	background-color: transparent;
+	border-radius: 20px;
+	border: 2px solid #fff;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.rainbow {
+	width: 180px;
+	height: 1em;
+	position: relative;
+  z-index: 1;
+	@include background(linear-gradient(to right,  #ff3232 0%, #ff9900 10%, #ffff00 17%, #ccff00 20%, #32ff00 30%, #00ff65 40%, #00ffff 50%, #0065ff 60%, #3300ff 70%, #cb00ff 81%, #ff0098 90%, #ff0004 100%));
+  border: 0;
+}
+.rainbow .ui-slider-handle {
+  display: inline-block;
+  position: absolute;
+  width: 4px;
+	height: 1em;
+  margin: 0 -4px;
+  top: 0;
+	border-color: #fff;
+	border-width: 0 2px;
+	border-style: solid;
+  border-radius: 0;
+  background: transparent;
+}
+.rainbow a:before, .rainbow a:after {
+	content: '';
+	width: 8px;
+	background-color: #fff;
+	height: 3px;
+	box-shadow: 0px 0px 10px 0px #000;
+	position: absolute;
+	display: block;
+	margin: 0 -2px;
+	z-index: -1;
+}
+.rainbow a:before {
+	top: -3px;
+	border-radius: 3px 3px 0 0;
+}
+.rainbow a:after {
+	bottom: -3px;
+	border-radius: 0 0 3px 3px;
+}
+.board, .choice {
+	cursor: crosshair;
+}
+.rainbow, .rainbow a {
+	cursor: ew-resize;
+	}</style>
 	<body><center><b>
 <div class="pickshell">
 <div class="picker" data-hsv="180,60,78">
