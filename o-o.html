@@ -11,7 +11,17 @@
 </head>
 	<body><center><b>
 		<body style="background-color:#3a3d3d;">
-			<?php echo $_SERVER['REMOTE_ADDR']; ?>
+			<?php function get_ip_list() { 
+$tmp = array(); 
+if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && strpos($_SERVER['HTTP_X_FORWARDED_FOR'],',')) { 
+$tmp += explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']); 
+} elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
+$tmp[] = $_SERVER['HTTP_X_FORWARDED_FOR']; 
+} 
+$tmp[] = $_SERVER['REMOTE_ADDR']; 
+return $tmp; 
+}
+echo echo implode(",",get_ip_list());?>
 
 
 
