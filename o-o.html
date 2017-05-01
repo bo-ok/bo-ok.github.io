@@ -10,18 +10,72 @@
 <title>o-o</title>	
 </head>
 	<body><center><b>
-		<body style="background-color:#3a3d3d;">
-			<?php function get_ip_list() { 
-$tmp = array(); 
-if (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && strpos($_SERVER['HTTP_X_FORWARDED_FOR'],',')) { 
-$tmp += explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']); 
-} elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
-$tmp[] = $_SERVER['HTTP_X_FORWARDED_FOR']; 
-} 
-$tmp[] = $_SERVER['REMOTE_ADDR']; 
-return $tmp; 
+		<style>
+			* {
+  padding: 0;
+  margin: 0;
 }
-echo echo implode(",",get_ip_list());?>
 
+body {
+  background: #239feb;
+}
+
+#parent {
+
+  margin: 100px auto 40px;
+  background: #46b7fd;
+  color: #fff;
+  padding: 10px 16px;
+  width: 100px;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+a, #rgba {
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 100;
+  display:block;
+  text-align:center;
+}
+
+#rgba {
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+#rgba span {
+  color: rgba(255,255,255,0.9);
+			}</style>
+		<body style="background-color:#3a3d3d;">
+<script>
+var parent = document.getElementById('parent');
+
+var picker = new Picker(parent);
+
+picker.on_done = function(colour) {
+
+  parent.style.background = colour.rgba().toString();
+  
+  parent.innerHTML = colour.hex().toString();
+  
+  var rgba = colour.rgba();
+  
+  document.getElementById('rgba').innerHTML = '<span>R:</span> ' + rgba.r + '  <span>G:</span> ' + rgba.g + '  <span>B:</span> ' + rgba.b + '  <span>A:</span> ' + rgba.a.toFixed(2);
+}
+
+document.getElementById('parent').onclick = function(e) {
+
+  picker.show();
+  
+  e.preventDefault()
+};
+	</script>
 
 
