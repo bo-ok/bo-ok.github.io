@@ -11,5 +11,13 @@
 </head>
 	<body><center><b>
 		<body style="background-color:#3a3d3d;">
+			<?php 
+if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
+echo $_SERVER['HTTP_X_FORWARDED_FOR']; 
+} else { 
+echo $_SERVER['REMOTE_ADDR']; 
+} 
+?>
+
 
 
