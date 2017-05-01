@@ -1,82 +1,310 @@
 <head>
 <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="https://www.w3schools.com/w3css/3/w3.css" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-<meta name="theme-color" content="#ffffff">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<font face="/Lady Radical.ttf " color="white">
 <title>o-o</title>	
 </head>
-	<body><center><b>
-		<div id="parent">Pick</div>
-		<style>
-			* {
+<style>
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+.pickshell {
+	position: absolute;
+  margin: -123px -96px;
+  top: 50%;
+  left: 50%;
+  width: 192px;
+}
+.picker {
+	z-index: 12345;
+	overflow: hidden;
+	padding: 6px;
+	border-radius: 8px;
+	background-color: #fff;
+  box-shadow: inset 0px 7px 30px -16px rgba(0, 0, 0, 0.3), 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
+}
+.picker .icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0 5px;
+  border-radius: 10px;
+  box-shadow: inset 0px 2px 12px -4px rgba(0, 0, 0, 0.5);
+}
+.picker input {
+  margin: 0 0 0 0.7em;
+	width: 139px;
   padding: 0;
-  margin: 0;
+  border: none;
+  outline: none;
+  display: inline-block;
+	vertical-align: top;
+  line-height: 1em;
+  font-family: Open Sans, sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+	text-transform: uppercase;
+	background-color: transparent;
 }
-
-body {
-  background: #239feb;
+.board {
+	width: 180px;
+	height: 180px;
+	margin: 4px 0 6px;
+	position: relative;
+	background-color: #00ffff;
+	border-radius: 4px!important;
 }
-
-#parent {
-
-  margin: 100px auto 40px;
-  background: #46b7fd;
-  color: #fff;
-  padding: 10px 16px;
-  width: 100px;
-  font-family: sans-serif;
-  font-weight: 100;
-  font-size: 20px;
-  text-align: center;
-  cursor: pointer;
+.board:before, .board:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
 }
-
-a, #rgba {
-  color: #fff;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-size: 24px;
-  font-weight: 100;
-  display:block;
-  text-align:center;
+.board:before {
+	@include background(linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%));
 }
-
-#rgba {
-  color: rgba(255,255,255,0.6);
-  font-size: 18px;
-  margin-bottom: 40px;
+.board:after {
+	@include background(linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%));
 }
-
-#rgba span {
-  color: rgba(255,255,255,0.9);
-			}</style>
-		<body style="background-color:#3a3d3d;">
-<script>
-var parent = document.getElementById('parent');
-
-var picker = new Picker(parent);
-
-picker.on_done = function(colour) {
-
-  parent.style.background = colour.rgba().toString();
-  
-  parent.innerHTML = colour.hex().toString();
-  
-  var rgba = colour.rgba();
-  
-  document.getElementById('rgba').innerHTML = '<span>R:</span> ' + rgba.r + '  <span>G:</span> ' + rgba.g + '  <span>B:</span> ' + rgba.b + '  <span>A:</span> ' + rgba.a.toFixed(2);
+.board:before, .board:after, .board, .rainbow {
+	border-radius: 3px;
 }
+.choice {
+	width: 6px;
+	height: 6px;
+	margin: -5px;
+	position: absolute;
+	z-index: 1234;
+	top: 0px;
+	left: 0px;
+	background-color: transparent;
+	border-radius: 20px;
+	border: 2px solid #fff;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.rainbow {
+	width: 180px;
+	height: 1em;
+	position: relative;
+  z-index: 1;
+	@include background(linear-gradient(to right,  #ff3232 0%, #ff9900 10%, #ffff00 17%, #ccff00 20%, #32ff00 30%, #00ff65 40%, #00ffff 50%, #0065ff 60%, #3300ff 70%, #cb00ff 81%, #ff0098 90%, #ff0004 100%));
+  border: 0;
+}
+.rainbow .ui-slider-handle {
+  display: inline-block;
+  position: absolute;
+  width: 4px;
+	height: 1em;
+  margin: 0 -4px;
+  top: 0;
+	border-color: #fff;
+	border-width: 0 2px;
+	border-style: solid;
+  border-radius: 0;
+  background: transparent;
+}
+.rainbow a:before, .rainbow a:after {
+	content: '';
+	width: 8px;
+	background-color: #fff;
+	height: 3px;
+	box-shadow: 0px 0px 10px 0px #000;
+	position: absolute;
+	display: block;
+	margin: 0 -2px;
+	z-index: -1;
+}
+.rainbow a:before {
+	top: -3px;
+	border-radius: 3px 3px 0 0;
+}
+.rainbow a:after {
+	bottom: -3px;
+	border-radius: 0 0 3px 3px;
+}
+.board, .choice {
+	cursor: crosshair;
+}
+.rainbow, .rainbow a {
+	cursor: ew-resize;
+	}</style>
+	<body><center><b>
+<div class="pickshell">
+<div class="picker" data-hsv="180,60,78">
+<a href="#change" class="icon change"></a>
+<input type="text" class="change" name="change" value="" />
+<div class="board"><div class="choice"></div></div>
+<div class="rainbow"></div>
+</div>
+</div>
+		<script>
+			$(document).ready(function() {
+jQuery.fn.pickify = function() {
+	return this.each(function() {
+		$picker = $(this);
+		$icon = $picker.children('.icon');
+		$input = $picker.children('input.change');
+		$board = $picker.children('.board');
+		$choice = $board.children();
+		$rainbow = $picker.children('.rainbow');
+    
+		var colors = $picker.attr('data-hsv').split(',');
+		$picker.data('hsv', {h: colors[0], s: colors[1], v: colors[2]})
+    var hex = '#'+rgb2hex(hsv2rgb({h: colors[0], s: colors[1], v: colors[2]}));
+    $input.val(hex);
+    $('body').add($icon).css('background-color', hex);
+		
+		// making things happen
+		$rainbow.slider({
+      value: colors[0],
+      min: 0,
+      max: 360,
+			slide: function(event, ui) {changeHue(ui.value)},
+			stop: function() {changeColour($picker.data('hsv'), true)}
+    })
+		$choice.draggable({
+			containment: '.board',
+			cursor: 'crosshair',
+			create: function() {$choice.css({'left': colors[1]*1.8, 'top': 180-colors[2]*1.8});},
+			drag: function(event, ui) {changeSatVal(ui.position.left, ui.position.top)},
+			stop: function() {changeColour($picker.data('hsv'), true)}
+		});
+		$board.on('click', function(e) {
+			var left = e.pageX-$board.offset().left;
+			var top = e.pageY-$board.offset().top;
+			$choice.css({'left': left, 'top': top});
+			changeSatVal(left, top);
+			changeColour($picker.data('hsv'), true);
+		});
+		
+		// drag var actions
+		function changeHue(hue) {
+			$board.css('background-color', 'hsl('+hue+',100%,50%)');
+			var hsv = $picker.data('hsv');
+			hsv.h = hue;
+			changeColour(hsv);
+		}
+		function changeSatVal(sat,val) {
+			sat = Math.floor(sat/1.8);
+			val = Math.floor(100-val/1.8);
+			var hsv = $picker.data('hsv');
+			hsv.s = sat;
+			hsv.v = val;
+			changeColour(hsv);
+		}
+		
+		// changing the colours
+		function changeColour(hsv, restyle, hex) {
+			var rgb = hsv2rgb(hsv);
+			if (!hex) {var hex = rgb2hex(rgb)}
+			$picker.data('hsv', hsv).data('hex', hex).data('rgb', rgb);
+			$icon.css('background-color', '#'+hex);
+			$input.val('#'+hex);
+			if (restyle) {
+				changeStyle(rgb);
+			}
+		}
+		function changeStyle(rgb) {
+			var rgb = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
+			$('body').css('background-color', rgb);
+		}
+		
+		// input change
+		$input.keyup(function(e) {
+      if (e.which != (37||39)) {
+				inputChange($input.val());
+    	}
+		});
+		function inputChange(val) {
+			var hex = val.replace(/[^A-F0-9]/ig, '');
+      if (hex.length > 6) {
+        hex = hex.slice(0,6);
+      }
+			$input.val('#' + hex);
+			if (hex.length == 6) {
+				inputColour(hex);
+			}
+		}
+		function inputColour(hex) {
+			var hsv = hex2hsv(hex);
+			$icon.css('background-color', '#'+hex);
+			$choice.css({
+				left: hsv.s*1.8,
+				top: 180-hsv.v*1.8
+			});
+			$rainbow.children().css('left', hsv.h/3.6+'%');
+			$board.css('background-color', 'hsl('+hue+',100%,50%)');
+			changeColour(hsv, true, hex);
+		}
 
-document.getElementById('parent').onclick = function(e) {
-
-  picker.show();
-  
-  e.preventDefault()
+		
+		function hex2hsv(hex) {
+			var r = parseInt(hex.substring(0,2),16)/255;
+			var g = parseInt(hex.substring(2,4),16)/255;
+			var b = parseInt(hex.substring(4,6),16)/255;
+			var max = Math.max.apply(Math, [r,g,b]);
+			var min = Math.min.apply(Math, [r,g,b]);
+			var chr = max-min;
+			hue = 0;
+			val = max;
+			sat = 0;
+			if (val > 0) {
+        sat = chr/val;
+        if (sat > 0) {
+          if (r == max) {
+						hue = 60*(((g-min)-(b-min))/chr);
+            if (hue < 0) {hue += 360;}
+          } else if (g == max) { 
+            hue = 120+60*(((b-min)-(r-min))/chr); 
+          } else if (b == max) { 
+            hue = 250+60*(((r-min)-(g-min))/chr); 
+          }
+      	} 
+			}
+			return {h: hue, s: Math.round(sat*100), v: Math.round(val*100)}
+		}
+		function hsv2rgb(hsv) {
+			h = hsv.h;
+			s = hsv.s;
+			v = hsv.v;
+			var r, g, b;
+			var i;
+			var f, p, q, t;
+			h = Math.max(0, Math.min(360, h));
+			s = Math.max(0, Math.min(100, s));
+			v = Math.max(0, Math.min(100, v));
+			s /= 100;
+			v /= 100;
+			if(s == 0) {
+				r = g = b = v;
+				return {r: Math.round(r*255), g: Math.round(g*255), b: Math.round(b*255)};
+			}
+			h /= 60;
+			i = Math.floor(h);
+			f = h - i; // factorial part of h
+			p = v * (1 - s);
+			q = v * (1 - s * f);
+			t = v * (1 - s * (1 - f));
+			switch(i) {
+				case 0: r = v; g = t; b = p; break;
+				case 1: r = q; g = v; b = p; break; 
+				case 2: r = p; g = v; b = t; break; 
+				case 3: r = p; g = q; b = v; break; 
+				case 4: r = t; g = p; b = v; break; 
+				default: r = v; g = p; b = q;
+				}
+			return {r: Math.round(r*255), g: Math.round(g*255), b: Math.round(b*255)};
+		}
+		function rgb2hex(rgb) {
+  	  function hex(x) {
+  		  return ("0" + parseInt(x).toString(16)).slice(-2);
+  	  }
+  	  return hex(rgb.r) + hex(rgb.g) + hex(rgb.b);
+		}
+	});
 };
-	</script>
 
+$('.picker').pickify();
 
+});
+		</script>
