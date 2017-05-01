@@ -5,11 +5,11 @@ Bo-ok is a state-of-the-art redirect service developed by Inb4 and his experienc
 
 ## Hiring Now
 ```
-Help Contribute to our project! 
+Help Contribute to our project!
 ```
 ## Owner ( Website )
 ```
-Inb4
+Inb4 [100%]
 ```
 ## Primary Developers ( HTML Interface )
 ```
