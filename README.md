@@ -1,4 +1,4 @@
-# Bo-ok [![Build Status]
+# Bo-ok [![Build Status]()]()
 ## bo-ok.github.io
 
 > Bo-ok is a state-of-the-art redirect service developed by Inb4 and his experienced team. As an influential website it opens up new hindsights and extraordinary experiences for millions of people. This website is dedicated to provide customers cutting-edge technology, stunning graphics and an elegant interface. Based on our customer's reccomendations, we will continue to improve our website to meet your maximum satisfaction.
