@@ -24,6 +24,13 @@ body {
 	text-transform: uppercase;
 }
 
+img {
+    position: absolute;
+    top: 0; bottom:0; left: 0; right:0;
+    margin: auto;
+}
+
+
 header {
 	padding: 15px;
 	font-size: 250%;
