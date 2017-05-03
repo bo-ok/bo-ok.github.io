@@ -13,10 +13,10 @@ Help Contribute to our project!
 ```
 ## Ownerships ( Website )
 ```
-Inb4 [40%]
+Inb4 [50%]
 Hexsphere [30%]
 MuyangYan [20%]
-Ryaoshi [10%]
+Ryaoshi [0%]
 ```
 ## Primary Developers ( HTML Interface )
 ```
