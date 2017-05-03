@@ -13,7 +13,10 @@ Help Contribute to our project!
 ```
 ## Owner ( Website )
 ```
-Inb4 [100%]
+Inb4 [40%]
+Hexsphere [10%]
+MuyangYan [10%]
+Ryaoshi [10%]
 ```
 ## Primary Developers ( HTML Interface )
 ```
@@ -35,7 +38,7 @@ Inb4
 
 ## Primary Developers ( JS Implementation )
 ```
-Muyang Yan
+MuyangYan
 ```
 ## Secondary Developers ( JS Implementation )
 ```
