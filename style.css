@@ -92,4 +92,7 @@ p {
 	100% {
 		top: 65%;
 	}
+	p.thick {
+    font-weight: bold;
+	}
 }
