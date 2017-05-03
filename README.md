@@ -11,7 +11,7 @@ https://discord.gg/NBJugpX
 ```
 Help Contribute to our project!
 ```
-## Owner ( Website )
+## Ownerships ( Website )
 ```
 Inb4 [40%]
 Hexsphere [10%]
