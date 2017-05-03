@@ -26,6 +26,7 @@ body {
 
 header {
 	padding: 15px;
+	font-size: 250%;
 }
 
 h1,
@@ -34,21 +35,17 @@ h3 {
 	font-family: 'Lady_Radical', sans-serif;
 }
 
-h1 {
-	font-size: 250%;
-}
-
 h2 {
 	word-spacing: 20px;
-	font-size: 190%;
+	font-size: 160%;
 	margin: 25px;
 }
 
 p {
 	letter-spacing: 0.8px;
 	margin: 0 auto;
-	width: 80%;
-	font-size: 140%;
+	width: 65%;
+	font-size: 120%;
 	text-transform: none;
 }
 
@@ -75,10 +72,15 @@ p {
 	float: left;
 }
 
-.animated-image {
+.link-image {
 	height: 250px;
+	margin-top: 75px;
+}
+
+/* If we use this method, the image won't be centered even if it is enclosed in a center tag.
+.animated-image {
+	
 	position: absolute;
-	left: 42%;
 	animation: MoveUpDown 1s linear infinite;
 }
 
@@ -93,3 +95,4 @@ p {
 		top: 65%;
 	}
 }
+*/
