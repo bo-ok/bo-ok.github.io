@@ -79,6 +79,7 @@ p {
 
 
 /* If we use this method, the image won't be centered even if it is enclosed in a center tag.
+
 .animated-image {
 	
 	position: absolute;
