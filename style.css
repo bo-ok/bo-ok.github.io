@@ -21,19 +21,15 @@ body {
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 	text-align: center;
-	text-transform: uppercase;
+	text-transform: none;
 }
-
-img {
-    position: absolute;
-    top: 0; bottom:0; left: 0; right:0;
-    margin: auto;
-}
-
 
 header {
 	padding: 15px;
-	font-size: 250%;
+}
+
+header h1 {
+	font-size: 290%;
 }
 
 h1,
@@ -42,9 +38,16 @@ h3 {
 	font-family: 'Lady_Radical', sans-serif;
 }
 
+.heading {
+	width: 20%;
+	margin: 0 auto 35px auto;
+	padding-top: 250px;
+	font-size: 380%;
+}
+
 h2 {
 	word-spacing: 20px;
-	font-size: 160%;
+	font-size: 210%;
 	margin: 25px;
 }
 
@@ -79,9 +82,8 @@ p {
 }
 
 .link-image {
-	position: reltive;
-	height: 250px;
-	margin-top: 75px;
+	position: relative;
+	margin: 0 auto;
 }
 
 
