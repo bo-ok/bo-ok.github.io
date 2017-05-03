@@ -67,12 +67,12 @@ p {
 }
 
 .user-image {
-	vertical-align: middle;
 	width: 56px;
 	float: left;
 }
 
 .link-image {
+	position: reltive;
 	height: 250px;
 	margin-top: 75px;
 }
