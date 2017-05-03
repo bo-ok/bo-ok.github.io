@@ -1,0 +1,43 @@
+@font-face {
+	font-family: Lady_Radical;
+	src: url(Lady_Radical.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+html,
+body {
+	background-color: #3A3D3D;
+	color: #fff;
+	font-family: 'Lady_Radical', sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.animated-image {
+	position: absolute;
+	left: 40%;
+
+	animation: MoveUpDown 1s linear infinite;
+}
+
+@keyframes MoveUpDown {
+	0% {
+		bottom: 25%;
+	}
+	50% {
+		bottom: 30%;
+	}
+	100% {
+		bottom: 25%;
+	}
+}

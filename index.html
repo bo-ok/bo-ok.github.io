@@ -16,82 +16,47 @@ ______  ______         ____            ____     ______   _______
                    Project Created by Team Bo-ok
                                                               
                                                             
--->    
+-->
+<html lang="en">
 
-<!--Title-->
 <head>
-<title>Bᴏ-ᴏᴋ</title>	
+	<!--Startup Sound-->
+	<audio autoplay> 
+		<source src="smb3coin.mp3">
+	</audio>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bo-ok Offical Website">
+	<title>Bᴏ-ᴏᴋ</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="https://www.w3schools.com/w3css/3/w3.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
-<!--Backend Code-->
-<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="https://www.w3schools.com/w3css/3/w3.css" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-<meta name="theme-color" content="#ffffff">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<font face="/Lady Radical.ttf " color="white">
-<body style="background-color:#3a3d3d;">
+<body>
 	
-<!--Startup Sound-->
-	<audio autoplay> 
-  <source src="smb3coin.mp3">
-</audio>
-<!--Image Style-->
-	<style>
-		img {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-	</style>
-	
-	<!--CSS Font-->
-	<style>
-		@font-face { 
-font-family: Lady Radical;
-src: url(/Lady Radical.ttf); 
-}
-	</style>
-	<!--Hover Image-->
-	<style>
-		.test {
-  animation: MoveUpDown 1s linear infinite;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
+	<section>
+		<a href="o-o.html">
+		<img src="book.gif" class="animated-image" alt="Book">
+	</a>
 
-@keyframes MoveUpDown {
-  0% {
-    bottom: 0;
-}
-  50% {
-    bottom: 50px;
-
-  100% {
-    bottom: 0;
-  }
-}</style>
-
-<!--Images-->
-<center>
-	<a href="/o-o" class="w3-hover-opacity" class="g-recaptcha" id="link" target="_blank" data-sitekey="6Ld6sx4UAAAAAH1abyMj3XnSBJKIQs89NbGKu-0B " data-callback="YourOnSubmitFn">
-					<img src="/book.gif" class="test" alt="Book"></a>
-		
-			<!--Enable Space Press-->
-			<script>
+	<script>
 		var link = document.getElementById("link");
 
-document.onkeydown = function (e) {
-    if (e.keyCode == 32) {
-        link.click();
-    }
-};
-			</script>
-			
+		document.onkeydown = function(e) {
+			if (e.keyCode == 32) {
+				link.click();
+			}
+		};
+	</script>
+		
+	</section>
+	
+</body>
+
 </html>
