@@ -1,6 +1,7 @@
 @font-face {
 	font-family: Lady_Radical;
-	src: url(Lady_Radical.ttf);
+	src: url(Fonts/Lady_Radical.ttf);
+	font-weight: normal;
 }
 
 * {
@@ -23,21 +24,72 @@ body {
 	text-transform: uppercase;
 }
 
-.animated-image {
-	position: absolute;
-	left: 40%;
+header {
+	padding: 15px;
+}
 
+h1,
+h2,
+h3 {
+	font-family: 'Lady_Radical', sans-serif;
+}
+
+h1 {
+	font-size: 250%;
+}
+
+h2 {
+	word-spacing: 20px;
+	font-size: 190%;
+	margin: 25px;
+}
+
+p {
+	letter-spacing: 0.8px;
+	margin: 0 auto;
+	width: 80%;
+	font-size: 140%;
+	text-transform: none;
+}
+
+.team-container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.team-member-row {
+	padding: 15px 275px 15px 275px;
+	border-bottom: 1px solid #fff;
+	margin-bottom: 15px;
+}
+
+.team-container h3 {
+	vertical-align: middle;
+	float: right;
+	width: 50%;
+}
+
+.user-image {
+	vertical-align: middle;
+	width: 56px;
+	float: left;
+}
+
+.animated-image {
+	height: 250px;
+	position: absolute;
+	left: 42%;
 	animation: MoveUpDown 1s linear infinite;
 }
 
 @keyframes MoveUpDown {
 	0% {
-		bottom: 25%;
+		top: 65%;
 	}
 	50% {
-		bottom: 30%;
+		top: 68%;
 	}
 	100% {
-		bottom: 25%;
+		top: 65%;
 	}
 }
