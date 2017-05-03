@@ -7,41 +7,34 @@
 >`
 https://discord.gg/NBJugpX
 `
-## Hiring Now
+### Hiring Now
 ```
 Help Contribute to our project!
 ```
-## Ownerships ( Website )
+## Ownership ( % )
 ```
 Inb4 [50%]
 Hexsphere [30%]
 MuyangYan [20%]
 Ryaoshi [0%]
 ```
-## Primary Developers ( HTML Interface )
+## HTML Developers
 ```
 Inb4
 Hexsphere
 ```
-### Secondary Developers ( HTML Interface )
-```
-Ryaoshi
-```
-## Primary Developers ( CSS Styling )
+
+## CSS Developers
 ```
 Hexsphere
-```
-### Secondary Developers ( CSS Styling )
-```
 Inb4
 ```
 
-## Primary Developers ( JS Implementation )
+## JS Developers
 ```
 MuyangYan
-```
-### Secondary Developers ( JS Implementation )
-```
 Inb4
 ```
+###
+
 
