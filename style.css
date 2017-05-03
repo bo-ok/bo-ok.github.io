@@ -3,7 +3,9 @@
 	src: url(Fonts/Lady_Radical.ttf);
 	font-weight: normal;
 }
-
+img {
+    text-align: center;
+}
 * {
 	margin: 0;
 	padding: 0;
