@@ -40,4 +40,7 @@ body {
 	100% {
 		bottom: 25%;
 	}
+	p.thick {
+    font-weight: bold;
+	}
 }
