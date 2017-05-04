@@ -85,18 +85,6 @@ p {
 	position: relative;
 	margin: 0 auto;
 }
-.Book { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
-}
-
-h1 { 
-   position: absolute; 
-   top: 200px; 
-   left: 0; 
-   width: 100%; 
-}
-
 
 /* If we use this method, the image won't be centered even if it is enclosed in a center tag.
 
