@@ -39,7 +39,6 @@ h3 {
 }
 
 .heading {
-	width: 20%;
 	margin: 0 auto 35px auto;
 	padding-top: 250px;
 	font-size: 380%;
@@ -65,7 +64,7 @@ p {
 }
 
 .team-member-row {
-	padding: 15px 275px 15px 275px;
+	padding: 15px 25% 15px 35%;
 	border-bottom: 1px solid #fff;
 	margin-bottom: 15px;
 }
