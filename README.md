@@ -14,7 +14,7 @@ Help Contribute to our project!
 ## Ownership ( % )
 ```
 Inb4 [40%]
-Hexsphere [40%]
+Hexsphere [60%]
 MuyangYan [20%]
 Ryaoshi [0%]
 ```
