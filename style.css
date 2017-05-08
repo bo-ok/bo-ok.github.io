@@ -24,12 +24,40 @@ body {
 	text-transform: none;
 }
 
-header {
+.main-nav {
+	width: 100%;
+	background-color: rgba(52, 54, 54, 0.98);
+	box-shadow: 0 2px 2px #292929;
+	z-index: 9999;
 	padding: 15px;
+	position: relative;
+	list-style: none;
+	text-align: center;
 }
 
-header h1 {
-	font-size: 290%;
+.main-nav li {
+	display: inline-block;
+	margin-left: 40px;
+	text-transform: uppercase;
+	font-size: 120%;
+}
+
+.main-nav img {
+	width: 60px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 3px solid transparent;
+	-webkit-transition: border-bottom 0.2s;
+	transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+	border-bottom: 3px solid #fff;
 }
 
 h1,
@@ -82,26 +110,18 @@ p {
 
 .link-image {
 	position: relative;
-	margin: 0 auto;
-}
-
-/* If we use this method, the image won't be centered even if it is enclosed in a center tag.
-
-.animated-image {
-	
-	position: absolute;
 	animation: MoveUpDown 1s linear infinite;
+	margin: 0 auto;
 }
 
 @keyframes MoveUpDown {
 	0% {
-		top: 65%;
+		transform: translate3d(0, -0, 0);
 	}
 	50% {
-		top: 68%;
+		transform: translate3d(0, -10%, 0);
 	}
 	100% {
-		top: 65%;
+		transform: translate3d(0, -0, 0);
 	}
 }
-*/

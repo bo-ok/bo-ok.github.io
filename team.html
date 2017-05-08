@@ -1,39 +1,22 @@
 <!DOCTYPE html>
-<!--
-                                                                                                                            
-______  ______         ____            ____     ______   _______   
-\     \|\     \    ____\_  \__     ____\_  \__ |\     \  \      \  
- |     |\|     |  /     /     \   /     /     \ \\     \  |     /| 
- |     |/____ /  /     /\      | /     /\      | \|     |/     //  
- |     |\     \ |     |  |     ||     |  |     |  |     |_____//   
- |     | |     ||     |  |     ||     |  |     |  |     |\     \   
- |     | |     ||     | /     /||     | /     /| /     /|\|     |  
-/_____/|/_____/||\     \_____/ ||\     \_____/ |/_____/ |/_____/|  
-|    |||     | || \_____\   | / | \_____\   | /|     | / |    | |  
-|____|/|_____|/  \ |    |___|/   \ |    |___|/ |_____|/  |____|/   
-                  \|____|         \|____|                         
-                Project Created by Team Bo-ok
-                                                              
-                                                            
--->
+
 <html lang="en">
 
 <head>
 	<!--Startup Sound-->
 	<audio autoplay>
-        <source src="smb3coin.mp3">
-    </audio>
+		<source src="smb3coin.mp3">
+	</audio>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Bo-ok Offical Website">
-	<title>Bᴏ-ᴏᴋ</title>
+	<title>Aʙᴏᴜᴛ</title>
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
-	<link rel="stylesheet" type="text/css" href="animate.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="Favicons/apple-icon-57x57.png">
@@ -56,32 +39,17 @@ ______  ______         ____            ____     ______   _______
 </head>
 
 <body>
-	<header>
-		<nav>
-			<div>
-				<ul class="main-nav">
-					<li><a href="about.html">About Us</a></li>
-					<li><img src="/Images/g"></li>
-					<li><a href="team.html">Our Team</a></li>
-				</ul>
+		<div class="team-container">
+			<h2>our team:</h2>
+			<div class="row team-member-row">
+				<img class="user-image" src="Images/Hexsphere-Logo.svg">
+				<h3>Hexsphere</h3>
 			</div>
-		</nav>
-	</header>
-	<section>
-		<h1 class="animated fadeInDown heading">enter bo-ok!</h1>
-		<a href="about.html" target="_blank">
-			<img src="/Images/book.gif" class="link-image" alt="Book">
-		</a>
-		<script>
-			var link = document.getElementById("link");
-			document.onkeydown = function(e) {
-				if (e.keyCode == 32) {
-					link.click();
-				}
-			};
-
-		</script>
-	</section>
+			<div class="row team-member-row">
+				<img class="user-image" src="Images/Inb4.gif">
+				<h3>Inb4</h3>
+			</div>
+		</div>
 </body>
 
 </html>
