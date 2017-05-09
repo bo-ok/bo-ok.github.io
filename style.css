@@ -21,7 +21,7 @@ body {
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 	text-align: center;
-	text-transform: none;
+	text-transform: lowercase;
 }
 
 .main-nav {
